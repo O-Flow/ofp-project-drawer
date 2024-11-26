@@ -1,0 +1,43 @@
+{
+  "name": "ofp-project-drawer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "publish": "npm publish"
+  },
+  "keywords": [],
+  "author": "O FLow",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "react": "^19.0.0-rc-e56f4ae3-20240830",
+    "react-dom": "^19.0.0-rc-e56f4ae3-20240830"
+  },
+  "peerDependencies": {
+    "@babylonjs/core": "^7.23.0",
+    "@babylonjs/gui": "^7.23.0",
+    "@babylonjs/gui-editor": "^7.23.0",
+    "@babylonjs/inspector": "^7.23.0",
+    "@babylonjs/loaders": "^7.23.0",
+    "@babylonjs/materials": "^7.23.0",
+    "@babylonjs/node-editor": "^7.23.0",
+    "@babylonjs/post-processes": "^7.23.0",
+    "@babylonjs/procedural-textures": "^7.23.0",
+    "@babylonjs/serializers": "^7.23.0",
+    "@babylonjs/viewer": "^7.23.0",
+    "valtio": "^2.0.0-rc.0",
+    "y-websocket": "^2.0.3",
+    "yjs": "^13.6.18"
+  }
+}
