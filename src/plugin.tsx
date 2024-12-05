@@ -11,12 +11,13 @@ export default class Plugin implements DrawerPlugin {
   name: string = 'project-drawer'
   version: string = '0.0.1'
   description = 'A cube for easy camera angle control'
+  enabled: boolean = true
   
   type: PluginType = PluginType.DRAWER
   theme: ThemeColor = ThemeColor.BLUE
   
-  async onLoad(api: OfpApi) {
-    loadApi(api)
+  async onLoad() {
+
   }
   async onActivate() {
   
@@ -37,7 +38,7 @@ export default class Plugin implements DrawerPlugin {
   color = ThemeColor.GREEN
 
   icon = () => {
-    return <span></span>
+    return <span className='material-symbols-rounded'>browse_activity</span>
   }
 
   drawer = Drawer
@@ -49,10 +50,10 @@ export default class Plugin implements DrawerPlugin {
 
   }
 
-  onIconClickRouter(e: MouseEvent) {
+  onIconClickRouter() {
     return ''
   }
-  onIconContextMenu(e: MouseEvent) {
+  onIconContextMenu() {
 
   }
 
