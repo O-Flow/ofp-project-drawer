@@ -33,12 +33,12 @@ export default function Drawer() {
     {/*<RsdTitle*/}
     {/*  title={'RsdTitle'}*/}
     {/*/>*/}
-    <Anchor
-      list = {['All', 'Texture', 'Model', 'Image', 'Audio', 'Video', 'Materials', 'Others']}
-      value={1}
-      onSelectChange={(value: number) => {
-        console.log(value)
-      }}
-    />
+    {/*<Anchor*/}
+    {/*  list = {['All', 'Texture', 'Model', 'Image', 'Audio', 'Video', 'Materials', 'Others']}*/}
+    {/*  value={1}*/}
+    {/*  onSelectChange={(value: number) => {*/}
+    {/*    console.log(value)*/}
+    {/*  }}*/}
+    {/*/>*/}
   </div>
 }

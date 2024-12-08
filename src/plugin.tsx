@@ -1,6 +1,6 @@
-import {IconPluginPosition, PluginType, ThemeColor} from 'oflow-interface'
-import {OfpApi, DrawerPlugin} from "oflow-interface";
-import {loadApi} from "./api";
+import { IconPluginPosition, PluginType, ThemeColor } from 'oflow-interface'
+import { OfpApi, DrawerPlugin } from "oflow-interface";
+import { loadApi } from "./api";
 import Drawer from "./drawer";
 import React from 'react';
 
