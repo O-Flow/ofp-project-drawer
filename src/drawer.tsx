@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
+import {RsdInput, SpaceReact, useState} from "./api";
 
 export default function Drawer() {
-  
+
+  const [title, setTitle] = useState('')
+
   return <div>
-    <h1>PROJECT DRAWER ca</h1>
+    <RsdInput value={title} onChange={setTitle}/>
   </div>
 }
