@@ -2,7 +2,7 @@ import {IconPluginPosition, PluginType, ThemeColor} from 'oflow-interface'
 import {OfpApi, DrawerPlugin} from "oflow-interface";
 import {loadApi} from "./api";
 import Drawer from "./drawer";
-import React from 'react';
+import React, {MouseEvent} from 'react';
 
 
 export default class Plugin implements DrawerPlugin {
@@ -15,8 +15,8 @@ export default class Plugin implements DrawerPlugin {
   type: PluginType = PluginType.DRAWER
   theme: ThemeColor = ThemeColor.BLUE
   
-  async onLoad(api: OfpApi) {
-    loadApi(api)
+  async onLoad() {
+    loadApi()
   }
   async onActivate() {
   
@@ -35,31 +35,11 @@ export default class Plugin implements DrawerPlugin {
   group = 'base'
   label = 'Project'
   color = ThemeColor.GREEN
+  enabled = false
 
   icon = () => {
     return <span></span>
   }
 
   drawer = Drawer
-
-  onRender() {
-
-  }
-  onEffect() {
-
-  }
-
-  onIconClickRouter(e: MouseEvent) {
-    return ''
-  }
-  onIconContextMenu(e: MouseEvent) {
-
-  }
-
-  onTitleClick() {
-
-  }
-  onTitleContextMenu() {
-
-  }
 }
