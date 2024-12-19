@@ -1,35 +1,7 @@
 const path = require('path')
-const webpack = require('webpack')
-const WebSocket = require('ws')
-const devMode = process.env.NODE_ENV !== 'production';
-
-class CompilationNotifierPlugin {
-  apply(compiler) {
-    let wss
-
-    compiler.hooks.compile.tap('CompilationNotifierPlugin', () => {
-      if (wss) return;
-      wss = new WebSocket.Server({ port: 8081 })
-      console.log('\nCompilation NotifierPlugin Websocket Started.\n')
-    })
-
-    compiler.hooks.done.tap('CompilationNotifierPlugin', () => {
-      if (!wss) return;
-      setTimeout(() => {
-        let message = 'Compiled At: ' + Date.now()
-        console.log('\n' + message + '\n')
-        wss.clients.forEach((client) => {
-          if (client.readyState === WebSocket.OPEN) {
-            client.send(message)
-          }
-        })
-      }, 1)
-    })
-  }
-}
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.ts',
   output: {
     filename: 'index.js',
@@ -50,7 +22,7 @@ module.exports = {
             options: {
               modules: {
                 namedExport: false,
-                localIdentName: devMode ? '[path][name]_[local]__[hash:base64:8]' : '[hash:base64]',
+                localIdentName: '[hash:base64]',
               }
             },
           },
@@ -66,7 +38,7 @@ module.exports = {
             options: {
               modules: {
                 namedExport: false,
-                localIdentName: '[path][name]_[local]__[hash:base64:8]',
+                localIdentName: '[hash:base64]',
               },
             },
           },
@@ -77,32 +49,12 @@ module.exports = {
         use: {
           loader: 'ts-loader',
           options: {
-            configFile: path.resolve(__dirname, 'tsconfig.json'),
+            configFile: path.resolve(__dirname, 'tsconfig.production.json'),
           },
         },
         exclude: /node_modules/,
       },
     ],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    port: 8080,
-    hot: false,
-    watchFiles: ['src/**/*'],
-    liveReload: false,
-    open: false,
-    client: {
-      reconnect: true,
-      overlay: {
-        warnings: false,
-        errors: true,
-      }
-    },
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new CompilationNotifierPlugin(),
-  ],
+  plugins: [],
 }

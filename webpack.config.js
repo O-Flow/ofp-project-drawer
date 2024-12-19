@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const WebSocket = require('ws')
-const devMode = process.env.NODE_ENV !== 'production';
 
 class CompilationNotifierPlugin {
   apply(compiler) {
@@ -50,7 +49,7 @@ module.exports = {
             options: {
               modules: {
                 namedExport: false,
-                localIdentName: devMode ? '[path][name]_[local]__[hash:base64:8]' : '[hash:base64]',
+                localIdentName: '[path][name]_[local]__[hash:base64:8]',
               }
             },
           },

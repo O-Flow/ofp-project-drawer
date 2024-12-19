@@ -24,14 +24,12 @@
 
     /* Output */
     "outDir": "./dist",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["./node_modules/@types"],
 
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": false,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx",
-    "src/global.d.ts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist", "assets"]
 }
