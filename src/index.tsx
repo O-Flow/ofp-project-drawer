@@ -11,21 +11,21 @@ export default class Plugin implements DrawerPlugin {
   name: string = 'project-drawer'
   version: string = '0.0.1'
   description = 'A cube for easy camera angle control'
-  
+
   type: PluginType = PluginType.DRAWER
   theme: ThemeColor = ThemeColor.BLUE
-  
+
   async onLoad() {
     loadApi()
   }
   async onActivate() {
-  
+
   }
   async onDeactivate() {
-  
+
   }
   async onDispose() {
-  
+
   }
 
   weight = 50
@@ -43,3 +43,6 @@ export default class Plugin implements DrawerPlugin {
 
   drawer = Drawer
 }
+
+
+(window as any).ofpConnector.load(new Plugin())

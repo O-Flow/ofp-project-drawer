@@ -1,12 +1,21 @@
-import {OfpApi, SpaceServiceApi, RsdInputProps, RsdButtonProps, AnchorProps} from "oflow-interface";
+import {OfpApi, SpaceServiceApi, RsdInputProps, RsdButtonProps, AnchorProps, StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
 import React, {FunctionComponent} from "react";
+import * as SourceBabylonCore from "@babylonjs/core";
 
-export let SpaceService: typeof SpaceServiceApi;
+export let SpaceService: typeof SpaceServiceApi
+export let StatusService: typeof StatusServiceApi
+export let LocalFileService: typeof LocalFileServiceApi
+export let Internationalization: typeof InternationalizationServiceApi
+export let MeetingService: typeof MeetingServiceApi
+export let PluginService: typeof PluginServiceApi
+export let UserService: typeof UserServiceApi
 
 export let Anchor: FunctionComponent<AnchorProps>
 
 export let RsdButton: FunctionComponent<RsdButtonProps>
 export let RsdInput: FunctionComponent<RsdInputProps>
+
+export let rss: { [key: string]: string }
 
 export let SpaceReact: typeof React
 // export let useActionState: typeof React.useActionState
@@ -27,17 +36,27 @@ export let useState: typeof React.useState
 export let useSyncExternalStore: typeof React.useSyncExternalStore
 export let useTransition: typeof React.useTransition
 
+export let Babylon: typeof SourceBabylonCore
+
 export function loadApi() {
   const api = (window as any).ofpConnector.ofpApi as OfpApi
 
-  SpaceService = api.services.main.SpaceService;
+  SpaceService = api.services.main.SpaceService
+  StatusService = api.services.main.StatusService
+  LocalFileService = api.services.main.LocalFileService
+  Internationalization = api.services.main.Internationalization
+  MeetingService = api.services.main.MeetingService
+  PluginService = api.services.main.PluginService
+  UserService = api.services.main.UserService
+
+  rss = api.styles.rss
 
   Anchor = api.components.normal.Anchor
 
   RsdInput = api.components.rsd.RsdInput
   RsdInput = api.components.rsd.RsdInput
 
-  SpaceReact = api.react as any
+  SpaceReact = api.modules.react as any
   // useActionState = SpaceReact.useActionState
   useCallback = SpaceReact.useCallback
   useContext = SpaceReact.useContext
@@ -56,4 +75,5 @@ export function loadApi() {
   useSyncExternalStore = SpaceReact.useSyncExternalStore
   useTransition = SpaceReact.useTransition
 
+  Babylon = api.modules.babylon
 }
