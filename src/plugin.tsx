@@ -1,8 +1,8 @@
 import {IconPluginPosition, PluginType, ThemeColor} from 'oflow-interface'
-import {OfpApi, DrawerPlugin} from "oflow-interface";
+import {DrawerPlugin} from "oflow-interface";
 import {loadApi} from "./api";
-import Drawer from "./drawer";
-import React, {MouseEvent} from 'react';
+import Drawer from "./drawer/drawer";
+import React from 'react';
 
 
 export default class Plugin implements DrawerPlugin {

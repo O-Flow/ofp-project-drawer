@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
     /* Target */
-    "target": "es5",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
 
     /* Modules */
-    "module": "esnext",                                /* Specify what module code is generated. */
+    "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
 
     /* JavaScript Support */
-    "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    "allowJs": true,
     "jsx": "react",
 
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
 
     /* Type Checking */
-    "strict": true,                                      /* Enable all strict type-checking options. */
+    "strict": true,
     "skipLibCheck": true,
 
     /* Output */
@@ -27,8 +28,10 @@
 
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": false
+    "emitDeclarationOnly": false,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "global.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx",
+    "src/global.d.ts"
+  ],
   "exclude": ["node_modules", "dist", "assets"]
 }
