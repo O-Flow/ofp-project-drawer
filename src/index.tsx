@@ -10,7 +10,7 @@ export default class Plugin implements DrawerPlugin {
   id: string = 'project-drawer'
   name: string = 'project-drawer'
   version: string = '0.0.1'
-  description = 'A cube for easy camera angle control'
+  description = 'Basic information will primarily be used to present details on list pages.'
 
   type: PluginType = PluginType.DRAWER
   theme: ThemeColor = ThemeColor.BLUE
@@ -29,7 +29,7 @@ export default class Plugin implements DrawerPlugin {
   }
 
   weight = 50
-  title = 'Project'
+  title = 'Project Information'
   tip = 'Manage project information.'
   position = IconPluginPosition.TOP_LEFT
   group = 'base'
