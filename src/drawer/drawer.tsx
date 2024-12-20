@@ -1,5 +1,5 @@
 import React from "react";
-import {Babylon, RsdInput, RsdTitle, useEffect, useState} from "../api";
+import {AntCheckbox, Babylon, RsdInput, RsdTitle, useEffect, useState} from "../api";
 import styles from './drawer.module.sass'
 
 export default function Drawer() {
@@ -14,6 +14,10 @@ export default function Drawer() {
   return <div className={styles.drawer}>
     <RsdTitle
       title={'Base Information'}
+    />
+    <AntCheckbox
+      value={false}
+      onChange={(value) => console.log(value)}
     />
   </div>
 }

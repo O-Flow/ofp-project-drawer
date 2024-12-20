@@ -1,4 +1,7 @@
-import {OfpApi, SpaceServiceApi, RsdInputProps, RsdButtonProps, RsdTitleProps, AnchorProps, StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
+import {OfpApi, SpaceServiceApi,
+  AntCheckboxProps,
+  RsdInputProps, RsdButtonProps, RsdTitleProps,
+  AnchorProps, StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
 import React, {FunctionComponent} from "react";
 import * as SourceBabylonCore from "@babylonjs/core";
 
@@ -15,6 +18,7 @@ export let Anchor: FunctionComponent<AnchorProps>
 export let RsdButton: FunctionComponent<RsdButtonProps>
 export let RsdInput: FunctionComponent<RsdInputProps>
 export let RsdTitle: FunctionComponent<RsdTitleProps>
+export let AntCheckbox: FunctionComponent<AntCheckboxProps>
 
 export let rss: { [key: string]: string }
 
@@ -57,6 +61,7 @@ export function loadApi() {
   RsdButton = api.components.rsd.RsdButton
   RsdInput = api.components.rsd.RsdInput
   RsdTitle = api.components.rsd.RsdTitle
+  AntCheckbox = api.components.ant.AntCheckbox
 
   SpaceReact = api.modules.react as any
   // useActionState = SpaceReact.useActionState
