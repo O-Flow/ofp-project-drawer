@@ -1,5 +1,20 @@
 import React from "react";
-import {AntCheckbox, AntColor, AntNumber, AntSwitch, RsdInput, RsdTitle, useEffect, useState} from "../api";
+import {
+  AntCheckbox,
+  AntColor,
+  AntNumber,
+  AntSwitch,
+  Anchor,
+  DrawerLoading,
+  FileProgressBar,
+  ProgressBar,
+  UploadButtonAndList,
+  RsdInput,
+  RsdTitle,
+  useEffect,
+  useState,
+  FlexGrow
+} from "../api";
 import styles from './drawer.module.sass'
 import {Vector3} from '@babylonjs/core'
 
@@ -30,6 +45,21 @@ export default function Drawer() {
     <AntSwitch
       value={false}
       onChange={value => console.log(value)}
+    />
+    <Anchor
+      list={['Anchor']}
+      value={1}
+      onSelectChange={value => console.log(value)}
+    />
+    <DrawerLoading/>
+    <FileProgressBar
+      size={''}
+      value={0.5}
+    />
+    <FlexGrow/>
+    <ProgressBar/>
+    <UploadButtonAndList
+      uploadText={'Upload Files'}
     />
   </div>
 }
