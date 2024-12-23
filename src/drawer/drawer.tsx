@@ -1,9 +1,9 @@
 import React from "react";
-import {AntCheckbox, Babylon, RsdInput, RsdTitle, useEffect, useState} from "../api";
+import {AntCheckbox, AntColor, RsdInput, RsdTitle, useEffect, useState} from "../api";
 import styles from './drawer.module.sass'
+import {Vector3} from '@babylonjs/core'
 
 export default function Drawer() {
-  const {Vector3} = Babylon
 
   const [title, setTitle] = useState('')
 
@@ -17,7 +17,11 @@ export default function Drawer() {
     />
     <AntCheckbox
       value={false}
-      onChange={(value) => console.log(value)}
+      onChange={value => console.log(value)}
+    />
+    <AntColor
+      value={'#ffffff'}
+      onColorChange={value => console.log(value)}
     />
   </div>
 }

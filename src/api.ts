@@ -1,5 +1,5 @@
 import {OfpApi, SpaceServiceApi,
-  AntCheckboxProps,
+  AntCheckboxProps, AntColorProps, AntNumberProps,
   RsdInputProps, RsdButtonProps, RsdTitleProps,
   AnchorProps, StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
 import React, {FunctionComponent} from "react";
@@ -15,10 +15,12 @@ export let UserService: typeof UserServiceApi
 
 export let Anchor: FunctionComponent<AnchorProps>
 
+export let AntCheckbox: FunctionComponent<AntCheckboxProps>
+export let AntColor: FunctionComponent<AntColorProps>
+export let AntNumber: FunctionComponent<AntNumberProps>
 export let RsdButton: FunctionComponent<RsdButtonProps>
 export let RsdInput: FunctionComponent<RsdInputProps>
 export let RsdTitle: FunctionComponent<RsdTitleProps>
-export let AntCheckbox: FunctionComponent<AntCheckboxProps>
 
 export let rss: { [key: string]: string }
 
@@ -58,10 +60,13 @@ export function loadApi() {
 
   Anchor = api.components.normal.Anchor
 
+  AntCheckbox = api.components.ant.AntCheckbox
+  AntNumber = api.components.ant.AntNumber
+  AntColor = api.components.ant.AntColor
+
   RsdButton = api.components.rsd.RsdButton
   RsdInput = api.components.rsd.RsdInput
   RsdTitle = api.components.rsd.RsdTitle
-  AntCheckbox = api.components.ant.AntCheckbox
 
   SpaceReact = api.modules.react as any
   // useActionState = SpaceReact.useActionState
