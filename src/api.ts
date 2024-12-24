@@ -1,6 +1,6 @@
 import {OfpApi, SpaceServiceApi,
   AntCheckboxProps, AntColorProps, AntNumberProps, AntSwitchProps,
-  RsdInputProps, RsdButtonProps, RsdTitleProps,
+  RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,
   SpanProps,
   AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,
   StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
@@ -26,8 +26,20 @@ export let AntCheckbox: FunctionComponent<AntCheckboxProps>
 export let AntColor: FunctionComponent<AntColorProps>
 export let AntNumber: FunctionComponent<AntNumberProps>
 export let AntSwitch: FunctionComponent<AntSwitchProps>
+
 export let RsdButton: FunctionComponent<RsdButtonProps>
+export let RsdCheckbox: FunctionComponent<RsdCheckboxProps>
+export let RsdColor: FunctionComponent<RsdColorProps>
+export let RsdDropdown: FunctionComponent<RsdDropdownProps>
+export let RsdFileSelect: FunctionComponent<RsdFileSelectProps>
+export let RsdFileSelectButton: FunctionComponent<RsdFileSelectProps>
 export let RsdInput: FunctionComponent<RsdInputProps>
+export let RsdMentions: FunctionComponent<RsdMentionsProps>
+export let RsdNone: FunctionComponent<RsdNoneProps>
+export let RsdNumber: FunctionComponent<RsdNumberProps>
+export let RsdNumberList: FunctionComponent<RsdNumberListProps>
+export let RsdSwitch: FunctionComponent<RsdSwitchProps>
+export let RsdTextarea: FunctionComponent<RsdInputProps>
 export let RsdTitle: FunctionComponent<RsdTitleProps>
 
 export let rss: { [key: string]: string }
@@ -79,7 +91,18 @@ export function loadApi() {
   AntSwitch = api.components.ant.AntSwitch
 
   RsdButton = api.components.rsd.RsdButton
+  RsdCheckbox = api.components.rsd.RsdCheckbox
+  RsdColor = api.components.rsd.RsdColor
+  RsdDropdown = api.components.rsd.RsdDropdown
+  RsdFileSelect = api.components.rsd.RsdFileSelect
+  RsdFileSelectButton = api.components.rsd.RsdFileSelectButton
   RsdInput = api.components.rsd.RsdInput
+  RsdMentions = api.components.rsd.RsdMentions
+  RsdNone = api.components.rsd.RsdNone
+  RsdNumber = api.components.rsd.RsdNumber
+  RsdNumberList = api.components.rsd.RsdNumberList
+  RsdSwitch = api.components.rsd.RsdSwitch
+  RsdTextarea = api.components.rsd.RsdTextarea
   RsdTitle = api.components.rsd.RsdTitle
 
   SpaceReact = api.modules.react as any
