@@ -1,6 +1,6 @@
 import {OfpApi, SpaceServiceApi,
   AntCheckboxProps, AntColorProps, AntNumberProps, AntSwitchProps,
-  RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,
+  RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,RsdSelectableButtonProps,
   SpanProps,
   AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,
   StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
@@ -28,6 +28,7 @@ export let AntNumber: FunctionComponent<AntNumberProps>
 export let AntSwitch: FunctionComponent<AntSwitchProps>
 
 export let RsdButton: FunctionComponent<RsdButtonProps>
+export let RsdSelectableButton: FunctionComponent<RsdSelectableButtonProps>
 export let RsdCheckbox: FunctionComponent<RsdCheckboxProps>
 export let RsdColor: FunctionComponent<RsdColorProps>
 export let RsdDropdown: FunctionComponent<RsdDropdownProps>
@@ -91,6 +92,7 @@ export function loadApi() {
   AntSwitch = api.components.ant.AntSwitch
 
   RsdButton = api.components.rsd.RsdButton
+  RsdSelectableButton = api.components.rsd.RsdSelectableButton
   RsdCheckbox = api.components.rsd.RsdCheckbox
   RsdColor = api.components.rsd.RsdColor
   RsdDropdown = api.components.rsd.RsdDropdown

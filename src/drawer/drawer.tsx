@@ -13,7 +13,16 @@ import {
   RsdTitle,
   useEffect,
   useState,
-  FlexGrow
+  FlexGrow,
+  RsdSelectableButton,
+  RsdButton,
+  RsdCheckbox,
+  RsdColor,
+  RsdDropdown,
+  RsdFileSelect,
+  RsdFileSelectButton,
+  RsdMentions,
+  RsdNone, RsdNumber, RsdNumberList, RsdSwitch
 } from "../api";
 import styles from './drawer.module.sass'
 import {Vector3} from '@babylonjs/core'
@@ -28,7 +37,7 @@ export default function Drawer() {
 
   return <div className={styles.drawer}>
     <RsdTitle
-      title={'Base Information'}
+      title='Base Information'
     />
     <AntCheckbox
       value={false}
@@ -59,7 +68,69 @@ export default function Drawer() {
     <FlexGrow/>
     <ProgressBar/>
     <UploadButtonAndList
-      uploadText={'Upload Files'}
+      uploadText='Upload Files'
+    />
+    <RsdSelectableButton
+      value={true}
+      onChange={value => console.log(value)}
+      label={'RsdSelectableButton'}
+    />
+    <RsdButton
+      onClick={(e) => console.log(e)}
+      text='RsdButton'
+    />
+    <RsdCheckbox
+      value={true}
+      onChange={value => console.log(value)}
+      label='RsdCheckbox'
+    />
+    <RsdColor
+      value='#ffffff'
+      onChange={value => console.log(value)}
+      label='RsdColor'
+    />
+    {/*<RsdDropdown*/}
+    {/*  value='RsdDropdown'*/}
+    {/*  onChange={value => console.log(value)}*/}
+    {/*  label='RsdDropdown'*/}
+    {/*/>*/}
+    <RsdFileSelect
+      label='RsdFileSelect'
+      value='RsdFileSelect'
+      onChange={value => console.log(value)}
+      accept={['']}
+    />
+    <RsdFileSelectButton
+      label='RsdFileSelectButton'
+      value='RsdFileSelectButton'
+      onChange={value => console.log(value)}
+      accept={['']}
+    />
+    <RsdInput
+      value='RsdInput'
+      onChange={value => console.log(value)}
+    />
+    <RsdMentions
+      value='RsdMentions'
+      onChange={value => console.log(value)}
+    />
+    <RsdNone
+      label='RsdNone'
+    />
+    <RsdNumber
+      label='RsdFileSelectButton'
+      value={1}
+      onChange={value => console.log(value)}
+    />
+    <RsdNumberList
+      keys={['']}
+      value={[1]}
+      onChangeIndex={value => console.log(value)}
+    />
+    <RsdSwitch
+      label='RsdSwitch'
+      value={true}
+      onChange={value => console.log(value)}
     />
   </div>
 }
