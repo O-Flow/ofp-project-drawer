@@ -2,7 +2,7 @@ import {OfpApi, SpaceServiceApi,
   AntCheckboxProps, AntColorProps, AntNumberProps, AntSwitchProps,
   RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,RsdSelectableButtonProps,
   SpanProps,
-  AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,
+  AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,ScrollBarProps,
   StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
 import React, {FunctionComponent} from "react";
 import * as SourceBabylonCore from "@babylonjs/core";
@@ -21,6 +21,7 @@ export let FileProgressBar: FunctionComponent<FileProgressBarProps>
 export let FlexGrow: FunctionComponent<{value?: number}>
 export let ProgressBar: FunctionComponent<ProgressBarProps>
 export let UploadButtonAndList: FunctionComponent<UploadButtonAndListProps>
+export let ScrollBar: FunctionComponent<ScrollBarProps>
 
 export let AntCheckbox: FunctionComponent<AntCheckboxProps>
 export let AntColor: FunctionComponent<AntColorProps>
@@ -85,6 +86,7 @@ export function loadApi() {
   FlexGrow = api.components.normal.FlexGrow
   ProgressBar = api.components.normal.ProgressBar
   UploadButtonAndList = api.components.normal.UploadButtonAndList
+  ScrollBar = api.components.normal.ScrollBar
 
   AntCheckbox = api.components.ant.AntCheckbox
   AntNumber = api.components.ant.AntNumber

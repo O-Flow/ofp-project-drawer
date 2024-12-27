@@ -1,0 +1,165 @@
+
+.drawer
+  display: flex
+  flex-direction: column
+  height: 100%
+  overflow: hidden
+
+  .main
+    flex-grow: 1
+    min-height: 6.25rem
+
+    .content
+      display: flex
+      flex-direction: column
+      min-height: 100%
+
+  .titleLine
+    display: flex
+    align-items: center
+    margin-bottom: -0.3125rem
+
+    .switch
+      margin-top: -0.125rem
+      margin-right: calc(1rem * var(--scale))
+
+  .titleMove
+    margin-bottom: -0.4375rem
+
+  .categorySpaceHeight
+    display: block
+    width: 100%
+    height: 0.625rem
+
+  .target
+    margin: 0.875rem 1.125rem
+    font-weight: 300
+
+    span
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+
+    .line
+      display: flex
+      align-items: center
+      color: #ffffff
+      font-size: calc(1rem * var(--font-scale))
+      overflow: hidden
+
+      .right
+        font-size: calc(0.875rem * var(--font-scale))
+
+    .line2
+      display: flex
+      align-items: center
+      color: #cccccc
+      font-size: calc(0.875rem * var(--font-scale))
+      overflow: hidden
+      margin-top: 0.625rem
+      transition: all 0.12s ease-in-out
+
+      .right
+        margin: 0 0.25rem 0 0.625rem
+
+  .infoLine
+    display: flex
+    align-items: center
+    overflow: hidden
+    margin: 0.75rem 1.125rem
+    font-weight: 300
+
+    .text
+      font-size: calc(0.875rem * var(--font-scale))
+      color: #eeeeee
+
+  .drawerTip
+    display: block
+    width: 100%
+    text-align: center
+    margin: calc(1.875rem * var(--font-scale)) 0 calc(1.875rem * var(--font-scale)) 0
+    font-size: calc(0.875rem * var(--font-scale))
+    color: #888888
+
+    .getChildrenLine
+      margin-top: -0.875rem
+
+      a
+        color: var(--primary-color)
+        opacity: 0.8
+        transition: all 0.12s ease-in-out
+
+      a:hover
+        opacity: 0.93
+
+      a:active
+        opacity: 1
+
+
+.background
+  border: 1px solid var(--drawer-border-color)
+  //background: #000000df // 白色主题
+  background: #0a0a0ad4 // 黑色主题
+  backdrop-filter: blur(64px)
+
+.space
+  flex-grow: 1
+
+.block
+  height: 1px
+  margin: 0.875rem
+
+.divider
+  min-height: 1px
+  max-height: 1px
+  margin: 0 var(--divider-margin)
+  background: var(--drawer-border-color)
+
+.dividerFull
+  min-height: 1px
+  max-height: 1px
+  width: 100%
+  background: var(--drawer-border-color)
+
+.resizeableBox
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  transition: all 0.22s ease-in-out
+
+
+.tag
+  display: inline-flex
+  align-items: center
+  padding: 0.125rem 0.5rem
+  margin-left: 0.25rem
+  border-radius: 0.5rem
+  background: rgba(8, 34, 52, 0.35)
+  color: #bce1f8
+  transition: all 0.12s ease-in-out
+  font-size: calc(0.8125rem * var(--font-scale))
+
+
+.easyScroll
+  scroll-behavior: smooth
+
+.easyScroll::-webkit-scrollbar
+  width: 0.25rem
+  height: 0.25rem
+
+.easyScroll::-webkit-scrollbar-track
+  border-radius: 0.125rem
+  margin: 0.25rem
+
+.easyScroll::-webkit-scrollbar-thumb
+  border-radius: 0.3125rem
+  background: #e2e2e255
+  transition: all 0.2s ease-in-out
+
+.easyScroll::-webkit-scrollbar-thumb:hover
+  background: #aaaaaa88
+
+
+.scrollBottomMargin::-webkit-scrollbar-track
+  margin-bottom: 0.9375rem
+
