@@ -45,6 +45,7 @@ export let RsdTextarea: FunctionComponent<RsdInputProps>
 export let RsdTitle: FunctionComponent<RsdTitleProps>
 
 export let rss: { [key: string]: string }
+export let rsbStyles: { [key: string]: string }
 
 export let SpaceReact: typeof React
 // export let useActionState: typeof React.useActionState
@@ -58,7 +59,6 @@ export let useImperativeHandle: typeof React.useImperativeHandle
 export let useInsertionEffect: typeof React.useInsertionEffect
 export let useLayoutEffect: typeof React.useLayoutEffect
 export let useMemo: typeof React.useMemo
-// export let useOptimistic: typeof React.useOptimistic
 export let useReducer: typeof React.useReducer
 export let useRef: typeof React.useRef
 export let useState: typeof React.useState
@@ -79,6 +79,7 @@ export function loadApi() {
   UserService = api.services.main.UserService
 
   rss = api.styles.rss
+  rsbStyles = api.styles.rsbStyles
 
   Anchor = api.components.normal.Anchor
   DrawerLoading = api.components.normal.DrawerLoading
