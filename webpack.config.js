@@ -29,7 +29,7 @@ class CompilationNotifierPlugin {
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),

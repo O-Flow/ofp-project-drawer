@@ -43,6 +43,3 @@ export default class Plugin implements DrawerPlugin {
 
   drawer = ProjectDrawerView
 }
-
-
-(window as any).ofpConnector.load(new Plugin())
