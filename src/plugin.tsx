@@ -3,6 +3,7 @@ import {DrawerPlugin} from "oflow-interface";
 import {loadApi} from "./api";
 import ProjectDrawerView from "./drawer/drawer";
 import React from 'react';
+import Drawer from "./drawer/drawer";
 
 
 export default class Plugin implements DrawerPlugin {
@@ -41,5 +42,5 @@ export default class Plugin implements DrawerPlugin {
     return <span className='material-symbols-rounded'>browse_activity</span>
   }
 
-  drawer = ProjectDrawerView
+  drawer = Drawer
 }

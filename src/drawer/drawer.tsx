@@ -13,7 +13,7 @@ import styles from './drawer.module.sass'
 import {Vector3} from '@babylonjs/core'
 import clsx from "clsx";
 
-export default function ProjectDrawerView() {
+export default function Drawer() {
 
   const [title, setTitle] = useState('')
 
