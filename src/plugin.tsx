@@ -1,7 +1,6 @@
 import {IconPluginPosition, PluginType, ThemeColor} from 'oflow-interface'
 import {DrawerPlugin} from "oflow-interface";
 import {loadApi} from "./api";
-import ProjectDrawerView from "./drawer/drawer";
 import React from 'react';
 import Drawer from "./drawer/drawer";
 
