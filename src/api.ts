@@ -3,7 +3,8 @@ import {OfpApi, SpaceServiceApi,
   RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,RsdSelectableButtonProps,
   SpanProps,
   AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,ScrollBarProps,
-  StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi} from "oflow-interface";
+  StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi,
+  ThemeProviderProps} from "oflow-interface";
 import React, {FunctionComponent} from "react";
 import * as SourceBabylonCore from "@babylonjs/core";
 
@@ -24,6 +25,7 @@ export let UploadButtonAndList: FunctionComponent<UploadButtonAndListProps>
 export let ScrollBar: FunctionComponent<ScrollBarProps>
 
 export let AntCheckbox: FunctionComponent<AntCheckboxProps>
+export let ThemeProvider: FunctionComponent<ThemeProviderProps>
 export let AntColor: FunctionComponent<AntColorProps>
 export let AntNumber: FunctionComponent<AntNumberProps>
 export let AntSwitch: FunctionComponent<AntSwitchProps>
@@ -89,6 +91,7 @@ export function loadApi() {
   UploadButtonAndList = api.components.normal.UploadButtonAndList
   ScrollBar = api.components.normal.ScrollBar
 
+  ThemeProvider = api.components.ant.ThemeProvider
   AntCheckbox = api.components.ant.AntCheckbox
   AntNumber = api.components.ant.AntNumber
   AntColor = api.components.ant.AntColor
@@ -129,5 +132,5 @@ export function loadApi() {
   useSyncExternalStore = SpaceReact.useSyncExternalStore
   useTransition = SpaceReact.useTransition
 
-  Babylon = api.modules.babylon
+  Babylon = api.modules.babylon as any
 }
