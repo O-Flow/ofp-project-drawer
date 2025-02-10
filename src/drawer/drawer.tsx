@@ -4,10 +4,10 @@ import {
   ScrollBar,
   rss,
   rsbStyles, ThemeProvider, clsx, rvGlobalService,
-  useRhine, useEffect, syncService
+  useRhine, useEffect, syncService, historyManager
 } from "../api";
 import styles from './drawer.module.sass'
-import {RvGlobal, ThemeColor } from "oflow-interface";
+import {Operate, RvGlobal, ThemeColor } from "oflow-interface";
 import {StoredRhineVar} from "rhine-var";
 
 export default function Drawer() {
@@ -21,12 +21,15 @@ export default function Drawer() {
         <div className={clsx(rss.content, styles.content)}>
           <RsdTitle title='Base Information' className={styles.title1}/>
           <RsdInput placeholder='Title' value={snap.information.title} onChange={v => {
+            historyManager.check(Operate.GLOBAL_INFORMATION_TITLE)
             state.information.title = v
           }}/>
           <RsdInput placeholder='Description' value={snap.information.description} onChange={v => {
+            historyManager.check(Operate.GLOBAL_INFORMATION_DESCRIPTION)
             state.information.description = v
           }} rows={4}/>
           <RsdMentions placeholder='Tags' value={snap.information.tags} onChange={v => {
+            historyManager.check(Operate.GLOBAL_INFORMATION_TAGS)
             state.information.tags = v
           }}/>
           <div className={clsx(rss.divider, styles.divider1)}/>

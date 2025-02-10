@@ -8,7 +8,8 @@ import {
   ThemeProviderProps,
   ModulePreloaderApi,
   SyncServiceApi,
-  RvGlobalServiceApi
+  RvGlobalServiceApi,
+  HistoryManagerApi
 } from "oflow-interface";
 import React, {FunctionComponent} from "react";
 import * as SourceBabylonCore from "@babylonjs/core";
@@ -24,6 +25,7 @@ export let meetingService: MeetingServiceApi
 export let modulePreloader: ModulePreloaderApi
 
 export let syncService: SyncServiceApi
+export let historyManager: HistoryManagerApi
 export let rvGlobalService: RvGlobalServiceApi
 
 export let Anchor: FunctionComponent<AnchorProps>
@@ -99,6 +101,7 @@ export function loadApi() {
   modulePreloader = api.services.main.modulePreloader
 
   syncService = api.services.sync.syncService
+  historyManager = api.services.sync.historyManager
   rvGlobalService = api.services.sync.rvGlobalService
 
   rss = api.styles.rss
