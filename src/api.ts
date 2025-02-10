@@ -4,17 +4,21 @@ import {OfpApi, SpaceServiceApi,
   SpanProps,
   AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,ScrollBarProps,
   StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi,
-  ThemeProviderProps} from "oflow-interface";
+  ThemeProviderProps,
+  ModulePreloaderApi,
+  SyncServiceApi} from "oflow-interface";
 import React, {FunctionComponent} from "react";
 import * as SourceBabylonCore from "@babylonjs/core";
 
-export let SpaceService: typeof SpaceServiceApi
-export let StatusService: typeof StatusServiceApi
-export let LocalFileService: typeof LocalFileServiceApi
-export let Internationalization: typeof InternationalizationServiceApi
-export let MeetingService: typeof MeetingServiceApi
-export let PluginService: typeof PluginServiceApi
-export let UserService: typeof UserServiceApi
+export let spaceService: SpaceServiceApi
+export let statusService: StatusServiceApi
+export let pluginService: PluginServiceApi
+export let internationalizationService: InternationalizationServiceApi
+export let userService: UserServiceApi
+export let localFileService: LocalFileServiceApi
+export let meetingService: MeetingServiceApi
+export let modulePreloader: ModulePreloaderApi
+export let syncService: SyncServiceApi
 
 export let Anchor: FunctionComponent<AnchorProps>
 export let DrawerLoading: FunctionComponent<SpanProps>
@@ -69,16 +73,23 @@ export let useTransition: typeof React.useTransition
 
 export let Babylon: typeof SourceBabylonCore
 
-export function loadApi() {
-  const api = (window as any).ofpConnector.ofpApi as OfpApi
+export let clsx: (...args: (string | undefined | null)[]) => string
 
-  SpaceService = api.services.main.SpaceService
-  StatusService = api.services.main.StatusService
-  LocalFileService = api.services.main.LocalFileService
-  Internationalization = api.services.main.Internationalization
-  MeetingService = api.services.main.MeetingService
-  PluginService = api.services.main.PluginService
-  UserService = api.services.main.UserService
+
+
+export function loadApi() {
+  const api = (window as any).ofpConnector.getOfpApi() as OfpApi
+
+  spaceService = api.services.main.spaceService
+  statusService = api.services.main.statusService
+  localFileService = api.services.main.localFileService
+  internationalizationService = api.services.main.internationalizationService
+  meetingService = api.services.main.meetingService
+  pluginService = api.services.main.pluginService
+  userService = api.services.main.userService
+  modulePreloader = api.services.main.modulePreloader
+
+  syncService = api.services.sync.syncService
 
   rss = api.styles.rss
   rsbStyles = api.styles.rsbStyles
@@ -133,4 +144,6 @@ export function loadApi() {
   useTransition = SpaceReact.useTransition
 
   Babylon = api.modules.babylon as any
+
+  clsx = api.modules.clsx
 }

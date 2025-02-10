@@ -4,19 +4,13 @@ import {
   RsdMentions, RsdNumber, RsdSelectableButton, RsdSwitch,
   RsdTitle,
   ScrollBar,
-  useEffect,
-  useState,
   rss,
-  rsbStyles, ThemeProvider
+  rsbStyles, ThemeProvider, clsx
 } from "../api";
 import styles from './drawer.module.sass'
-import {Vector3} from '@babylonjs/core'
-import clsx from "clsx";
 import { ThemeColor } from "oflow-interface";
 
 export default function Drawer() {
-
-  const [title, setTitle] = useState('')
 
   return <ThemeProvider theme={ThemeColor.GREEN}>
     <div className={clsx(rss.drawer, styles.projectDrawerView)}>
@@ -44,7 +38,7 @@ export default function Drawer() {
                         d="M52.27,34.9a10.55,10.55,0,0,1-7.79,5c-5.15.71-10.19-1.88-15.41-1.8-4.73.08-9.23,2.33-13.93,1.91a10.82,10.82,0,0,1-8.26-4.84,7.78,7.78,0,0,1,.39-8.48c2.12-3,6.13-4.65,10.14-5.48a65.83,65.83,0,0,1,15.45-.8,48.63,48.63,0,0,1,10.25,1.14c6.69,1.69,12.45,7.06,9.26,13.2A1.62,1.62,0,0,1,52.27,34.9Z"/>
                 </svg>
               </div>
-            </RsdSelectableButton>
+            </RsdSelectableButton>7
             <RsdSelectableButton label='AR Device' value={true} onChange={v => ''}>
               <div className={rsbStyles.iconHolder} style={{
                 right: 6,
@@ -118,12 +112,8 @@ export default function Drawer() {
           <div className={clsx(rss.divider, styles.divider2)}/>
           <RsdTitle title='Playing Config' className={styles.title3}/>
           <RsdSwitch label='Enable Auto Play' value={true} onChange={v => ''}/>
-          <div className={rss.resizeableBox} style={{
-            maxHeight: '150px',
-          }}>
-            <RsdNumber label='Interval' value={1} onChange={v => ''}/>
-            <RsdSwitch label='Enable Loop' value={true} onChange={v => ''}/>
-          </div>
+          <RsdNumber label='Interval' value={1} onChange={v => ''}/>
+          <RsdSwitch label='Enable Loop' value={true} onChange={v => ''}/>
           <div className={rss.block}/>
         </div>
       </ScrollBar>
