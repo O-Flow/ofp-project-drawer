@@ -1768,17 +1768,17 @@ raw-body@2.5.2:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-dom@^19.0.0-rc-e56f4ae3-20240830:
-  version "19.0.0"
-  resolved "https://registry.npmmirror.com/react-dom/-/react-dom-19.0.0.tgz#43446f1f01c65a4cd7f7588083e686a6726cfb57"
-  integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
+react-dom@19.1.0-canary-8759c5c8-20250207:
+  version "19.1.0-canary-8759c5c8-20250207"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-19.1.0-canary-8759c5c8-20250207.tgz#06094e1503554f4903254a49a688bb298e932ce1"
+  integrity sha512-hZ1jcsqQW1HkNt3RiKTUfhIk6+5NFlLrTQzVbAChBQOWEpZH+B/r6JubX81ZzrmTYcMzMAeYeFmPg8A8hcJyUQ==
   dependencies:
-    scheduler "^0.25.0"
+    scheduler "0.26.0-canary-8759c5c8-20250207"
 
-react@^19.0.0-rc-e56f4ae3-20240830:
-  version "19.0.0"
-  resolved "https://registry.npmmirror.com/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
-  integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
+react@19.1.0-canary-8759c5c8-20250207:
+  version "19.1.0-canary-8759c5c8-20250207"
+  resolved "https://registry.npmjs.org/react/-/react-19.1.0-canary-8759c5c8-20250207.tgz#dda4930976960a6c157045b6dd2098a31f1632cf"
+  integrity sha512-uccNnzcrv/nzJrVUZZOC0fjGEpMpoRuicb/nmPQLYInkjpShcv3F+Uyz91yypxNJ6LWKilxB1n+JVytfOdF6FQ==
 
 readable-stream@^2.0.1:
   version "2.3.8"
@@ -1857,6 +1857,11 @@ retry@^0.13.1:
   resolved "https://registry.npmmirror.com/retry/-/retry-0.13.1.tgz#185b1587acf67919d63b357349e03537b2484658"
   integrity sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==
 
+rhine-var@0.8.10:
+  version "0.8.10"
+  resolved "https://registry.npmjs.org/rhine-var/-/rhine-var-0.8.10.tgz#33eb9970dfcc6fffdee7dce3c9d91674bb1df84c"
+  integrity sha512-F4DL4/tdCpXAmHliRpj/s13ahQsTap+AJBLJ4OiVaHJrxOtXQHXrWbqYAA9j3LQLtPFnMHXXRN91JJt0gU9qAg==
+
 run-applescript@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmmirror.com/run-applescript/-/run-applescript-7.0.0.tgz#e5a553c2bffd620e169d276c1cd8f1b64778fbeb"
@@ -1895,10 +1900,10 @@ sass@^1.83.0:
   optionalDependencies:
     "@parcel/watcher" "^2.4.1"
 
-scheduler@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.npmmirror.com/scheduler/-/scheduler-0.25.0.tgz#336cd9768e8cceebf52d3c80e3dcf5de23e7e015"
-  integrity sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==
+scheduler@0.26.0-canary-8759c5c8-20250207:
+  version "0.26.0-canary-8759c5c8-20250207"
+  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.26.0-canary-8759c5c8-20250207.tgz#5e829ad4f9c45eb8c0690242b73d460c22b585d3"
+  integrity sha512-2oQPgCYZlMGYP4OoQOSM2w0PlBky9w+hYXrSKnveCGvG+/IJB2h4G2Z5sPyAQT9r8TZSUsJ1MI4JoAVZNDu7pQ==
 
 schema-utils@^3.2.0:
   version "3.3.0"
