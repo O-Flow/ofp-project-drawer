@@ -1,4 +1,5 @@
-import {OfpApi, SpaceServiceApi,
+import {
+  OfpApi, SpaceServiceApi,
   AntCheckboxProps, AntColorProps, AntNumberProps, AntSwitchProps,
   RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,RsdSelectableButtonProps,
   SpanProps,
@@ -6,9 +7,12 @@ import {OfpApi, SpaceServiceApi,
   StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi,
   ThemeProviderProps,
   ModulePreloaderApi,
-  SyncServiceApi} from "oflow-interface";
+  SyncServiceApi,
+  RvGlobalServiceApi
+} from "oflow-interface";
 import React, {FunctionComponent} from "react";
 import * as SourceBabylonCore from "@babylonjs/core";
+import * as RhineVar from 'rhine-var'
 
 export let spaceService: SpaceServiceApi
 export let statusService: StatusServiceApi
@@ -18,7 +22,9 @@ export let userService: UserServiceApi
 export let localFileService: LocalFileServiceApi
 export let meetingService: MeetingServiceApi
 export let modulePreloader: ModulePreloaderApi
+
 export let syncService: SyncServiceApi
+export let rvGlobalService: RvGlobalServiceApi
 
 export let Anchor: FunctionComponent<AnchorProps>
 export let DrawerLoading: FunctionComponent<SpanProps>
@@ -75,6 +81,9 @@ export let Babylon: typeof SourceBabylonCore
 
 export let clsx: (...args: (string | undefined | null)[]) => string
 
+export let rhineVar: typeof RhineVar
+export let useRhine: typeof RhineVar.useRhine
+
 
 
 export function loadApi() {
@@ -90,6 +99,7 @@ export function loadApi() {
   modulePreloader = api.services.main.modulePreloader
 
   syncService = api.services.sync.syncService
+  rvGlobalService = api.services.sync.rvGlobalService
 
   rss = api.styles.rss
   rsbStyles = api.styles.rsbStyles
@@ -146,4 +156,7 @@ export function loadApi() {
   Babylon = api.modules.babylon as any
 
   clsx = api.modules.clsx
+
+  rhineVar = api.modules.rhineVar
+  useRhine = rhineVar.useRhine
 }
