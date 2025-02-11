@@ -32,7 +32,7 @@ export default function Drawer() {
             historyManager.check(Operate.GLOBAL_INFORMATION_TAGS)
             state.information.tags = v
           }}/>
-          <div className={clsx(rss.divider, styles.divider1)}/>
+          {/*<div className={clsx(rss.divider, styles.divider1)}/>*/}
           <RsdTitle title='3D Support' className={styles.title2}/>
           <div className={styles.line}>
             <RsdSelectableButton label='VR Headset' value={snap.support.VR} onChange={v => {
@@ -116,7 +116,7 @@ export default function Drawer() {
               </div>
             </RsdSelectableButton>
           </div>
-          <div className={clsx(rss.divider, styles.divider2)}/>
+          {/*<div className={clsx(rss.divider, styles.divider2)}/>*/}
           <RsdTitle title='Playing Config' className={styles.title3}/>
           <RsdSwitch label='Enable Auto Play' value={snap.playing.auto} onChange={v => {
             historyManager.check(Operate.GLOBAL_PLAYING_AUTO)
