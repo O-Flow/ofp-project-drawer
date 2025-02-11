@@ -3,12 +3,13 @@ import {
   RsdInput, RsdMentions, RsdNumber, RsdSelectableButton, RsdSwitch, RsdTitle,
   ScrollBar,
   rss,
-  rsbStyles, ThemeProvider, clsx, rvGlobalService,
-  useRhine, useEffect, syncService, historyManager
+  rsbStyles, ThemeProvider, rvGlobalService,
+  historyManager
 } from "../api";
 import styles from './drawer.module.sass'
-import {Operate, RvGlobal, ThemeColor } from "oflow-interface";
-import {StoredRhineVar} from "rhine-var";
+import { Operate, RvGlobal, ThemeColor } from "oflow-interface";
+import {StoredRhineVar, useRhine} from "rhine-var";
+import {clsx} from "clsx";
 
 export default function Drawer() {
 
