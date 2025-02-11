@@ -35,7 +35,10 @@ export default function Drawer() {
           <div className={clsx(rss.divider, styles.divider1)}/>
           <RsdTitle title='3D Support' className={styles.title2}/>
           <div className={styles.line}>
-            <RsdSelectableButton label='VR Headset' value={snap.support.VR} onChange={v => state.support.VR = v}>
+            <RsdSelectableButton label='VR Headset' value={snap.support.VR} onChange={v => {
+              historyManager.check(Operate.GLOBAL_SUPPORT_VR)
+              state.support.VR = v
+            }}>
               <div className={rsbStyles.iconHolder} style={{
                 right: 2,
                 bottom: -19
@@ -46,7 +49,10 @@ export default function Drawer() {
                 </svg>
               </div>
             </RsdSelectableButton>
-            <RsdSelectableButton label='AR Device' value={snap.support.AR} onChange={v => state.support.AR = v}>
+            <RsdSelectableButton label='AR Device' value={snap.support.AR} onChange={v => {
+              historyManager.check(Operate.GLOBAL_SUPPORT_AR)
+              state.support.AR = v
+            }}>
               <div className={rsbStyles.iconHolder} style={{
                 right: 6,
                 bottom: -15
@@ -62,7 +68,10 @@ export default function Drawer() {
             </RsdSelectableButton>
           </div>
           <div className={styles.line}>
-            <RsdSelectableButton label='MR Headset' value={snap.support.MR} onChange={v => state.support.MR = v}>
+            <RsdSelectableButton label='MR Headset' value={snap.support.MR} onChange={v => {
+              historyManager.check(Operate.GLOBAL_SUPPORT_MR)
+              state.support.MR = v
+            }}>
               <div className={rsbStyles.iconHolder} style={{
                 right: 5,
                 bottom: -20
@@ -80,7 +89,10 @@ export default function Drawer() {
                 </svg>
               </div>
             </RsdSelectableButton>
-            <RsdSelectableButton label='HP Magic Box' value={snap.support.HP} onChange={v => state.support.HP = v}>
+            <RsdSelectableButton label='HP Magic Box' value={snap.support.HP} onChange={v => {
+              historyManager.check(Operate.GLOBAL_SUPPORT_HP)
+              state.support.HP = v
+            }}>
               <div className={rsbStyles.iconHolder} style={{
                 right: -1,
                 bottom: -26
@@ -106,9 +118,18 @@ export default function Drawer() {
           </div>
           <div className={clsx(rss.divider, styles.divider2)}/>
           <RsdTitle title='Playing Config' className={styles.title3}/>
-          <RsdSwitch label='Enable Auto Play' value={snap.playing.auto} onChange={v => state.playing.auto = v}/>
-          <RsdNumber label='Interval' value={snap.playing.interval} onChange={v => state.playing.interval = v}/>
-          <RsdSwitch label='Enable Loop' value={snap.playing.loop} onChange={v => state.playing.loop = v}/>
+          <RsdSwitch label='Enable Auto Play' value={snap.playing.auto} onChange={v => {
+            historyManager.check(Operate.GLOBAL_PLAYING_AUTO)
+            state.playing.auto = v
+          }}/>
+          <RsdSwitch label='Enable Loop' value={snap.playing.loop} onChange={v => {
+            historyManager.check(Operate.GLOBAL_PLAYING_LOOP)
+            state.playing.loop = v
+          }}/>
+          <RsdNumber label='Interval' value={snap.playing.interval} onChange={v => {
+            historyManager.check(Operate.GLOBAL_PLAYING_INTERVAL)
+            state.playing.interval = v
+          }}/>
           <div className={rss.block}/>
         </div>
       </ScrollBar>
