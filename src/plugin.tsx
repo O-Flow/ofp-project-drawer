@@ -38,7 +38,7 @@ export default class Plugin implements DrawerPlugin {
   enabled = false
 
   icon = () => {
-    return <span className='material-symbols-rounded'>topic</span>
+    return <span className='material-symbols-rounded-fill'>dns</span>
   }
 
   drawer = Drawer
