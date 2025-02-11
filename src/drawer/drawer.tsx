@@ -55,7 +55,7 @@ export default function Drawer() {
             }}>
               <div className={rsbStyles.iconHolder} style={{
                 right: 6,
-                bottom: -15
+                bottom: -14
               }}>
                 <svg viewBox="0 0 60 60" className={rsbStyles.scale125}>
                   <path className={rsbStyles.line} d="M31.87,20a10.3,10.3,0,0,0-10.3,10.3,10.44,10.44,0,0,0,.36,2.76,10.84,10.84,0,0,0,.7,1.8,10.31,10.31,0,0,0,18.48,0,10,10,0,0,0,.69-1.8,10.45,10.45,0,0,0,.37-2.76A10.3,10.3,0,0,0,31.87,20Z"/>
