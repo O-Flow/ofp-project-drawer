@@ -1,7 +1,7 @@
 import {
   OfpApi, SpaceServiceApi,
-  AntCheckboxProps, AntColorProps, AntNumberProps, AntSwitchProps,
-  RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdDropdownProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,RsdSelectableButtonProps,
+  AntCheckboxProps, AntColorProps, AntNumberProps, AntSelectProps, AntSwitchProps,
+  RsdButtonProps, RsdCheckboxProps, RsdColorProps, RsdSelectProps, RsdFileSelectProps, RsdInputProps, RsdMentionsProps, RsdNoneProps, RsdNumberProps, RsdNumberListProps, RsdSwitchProps, RsdTitleProps,RsdSelectableButtonProps,
   SpanProps,
   AnchorProps, FileProgressBarProps, ProgressBarProps, UploadButtonAndListProps,ScrollBarProps,
   StatusServiceApi, LocalFileServiceApi, InternationalizationServiceApi, MeetingServiceApi, PluginServiceApi, UserServiceApi,
@@ -9,7 +9,8 @@ import {
   ModulePreloaderApi,
   SyncServiceApi,
   RvGlobalServiceApi,
-  HistoryManagerApi
+  HistoryManagerApi,
+  DialogApi
 } from "oflow-interface";
 import type { FunctionComponent } from "react";
 
@@ -21,6 +22,8 @@ export let userService: UserServiceApi
 export let localFileService: LocalFileServiceApi
 export let meetingService: MeetingServiceApi
 export let modulePreloader: ModulePreloaderApi
+
+export let Dialog: DialogApi
 
 export let syncService: SyncServiceApi
 export let historyManager: HistoryManagerApi
@@ -38,13 +41,14 @@ export let AntCheckbox: FunctionComponent<AntCheckboxProps>
 export let ThemeProvider: FunctionComponent<ThemeProviderProps>
 export let AntColor: FunctionComponent<AntColorProps>
 export let AntNumber: FunctionComponent<AntNumberProps>
+export let AntSelect: FunctionComponent<AntSelectProps>
 export let AntSwitch: FunctionComponent<AntSwitchProps>
 
 export let RsdButton: FunctionComponent<RsdButtonProps>
 export let RsdSelectableButton: FunctionComponent<RsdSelectableButtonProps>
 export let RsdCheckbox: FunctionComponent<RsdCheckboxProps>
 export let RsdColor: FunctionComponent<RsdColorProps>
-export let RsdDropdown: FunctionComponent<RsdDropdownProps>
+export let RsdSelect: FunctionComponent<RsdSelectProps>
 export let RsdFileSelect: FunctionComponent<RsdFileSelectProps>
 export let RsdFileSelectButton: FunctionComponent<RsdFileSelectProps>
 export let RsdInput: FunctionComponent<RsdInputProps>
@@ -72,6 +76,8 @@ export function loadApi() {
   userService = api.services.main.userService
   modulePreloader = api.services.main.modulePreloader
 
+  Dialog = api.services.view.Dialog
+
   syncService = api.services.sync.syncService
   historyManager = api.services.sync.historyManager
   rvGlobalService = api.services.sync.rvGlobalService
@@ -91,13 +97,14 @@ export function loadApi() {
   AntCheckbox = api.components.ant.AntCheckbox
   AntNumber = api.components.ant.AntNumber
   AntColor = api.components.ant.AntColor
+  AntSelect = api.components.ant.AntSelect
   AntSwitch = api.components.ant.AntSwitch
 
   RsdButton = api.components.rsd.RsdButton
   RsdSelectableButton = api.components.rsd.RsdSelectableButton
   RsdCheckbox = api.components.rsd.RsdCheckbox
   RsdColor = api.components.rsd.RsdColor
-  RsdDropdown = api.components.rsd.RsdDropdown
+  RsdSelect = api.components.rsd.RsdSelect
   RsdFileSelect = api.components.rsd.RsdFileSelect
   RsdFileSelectButton = api.components.rsd.RsdFileSelectButton
   RsdInput = api.components.rsd.RsdInput
