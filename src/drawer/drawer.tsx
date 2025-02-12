@@ -18,7 +18,7 @@ export default function Drawer() {
 
   return <ThemeProvider theme={ThemeColor.GREEN}>
     <div className={clsx(rss.drawer, styles.projectDrawerView)}>
-      <ScrollBar className={clsx(rss.main, 'bottom-margin-12')}>
+      <ScrollBar className={rss.main} drawer>
         <div className={clsx(rss.content, styles.content)}>
           <RsdTitle title='Base Information' className={styles.title1}/>
           <RsdInput placeholder='Title' value={snap.information.title} onChange={v => {
