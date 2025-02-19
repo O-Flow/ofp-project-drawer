@@ -4,10 +4,10 @@ import {
   ScrollBar,
   rss,
   rsbStyles, ThemeProvider, rvGlobalService,
-  historyManager
+  historyManager, RsdSelect
 } from "../api";
 import styles from './drawer.module.sass'
-import { Operate, RvGlobal, ThemeColor } from "oflow-interface";
+import { RvGlobal, ThemeBackground, ThemeColor } from "oflow-interface";
 import {StoredRhineVar, useRhine} from "rhine-var";
 import {clsx} from "clsx";
 
@@ -16,28 +16,44 @@ export default function Drawer() {
   const state = rvGlobalService.state as StoredRhineVar<RvGlobal>
   const snap = useRhine<RvGlobal>(state) as Readonly<RvGlobal>
 
+  const themeOptions = [
+    {value: ThemeBackground.BACKGROUND, label: 'With Background'},
+    {value: ThemeBackground.LIGHT, label: 'Light'},
+    {value: ThemeBackground.DARK, label: 'Dark'},
+  ]
+
   return <ThemeProvider theme={ThemeColor.GREEN}>
     <div className={clsx(rss.drawer, styles.projectDrawerView)}>
       <ScrollBar className={rss.main} drawer>
         <div className={clsx(rss.content, styles.content)}>
           <RsdTitle title='Base Information' className={styles.title1}/>
           <RsdInput placeholder='Title' value={snap.information.title} onChange={v => {
-            historyManager.check(Operate.GLOBAL_INFORMATION_TITLE)
+            historyManager.check('global.information.title')
             state.information.title = v
           }}/>
           <RsdInput placeholder='Description' value={snap.information.description} onChange={v => {
-            historyManager.check(Operate.GLOBAL_INFORMATION_DESCRIPTION)
+            historyManager.check('global.information.description')
             state.information.description = v
           }} rows={4}/>
           <RsdMentions placeholder='Tags' value={snap.information.tags} onChange={v => {
-            historyManager.check(Operate.GLOBAL_INFORMATION_TAGS)
+            historyManager.check('global.information.tags')
             state.information.tags = v
           }}/>
           {/*<div className={clsx(rss.divider, styles.divider1)}/>*/}
+          <RsdTitle title='UI Setting'/>
+          <RsdSelect
+            label='Theme'
+            value={snap.ui.theme}
+            options={themeOptions}
+            onChange={v => {
+              historyManager.check('global.ui.theme')
+              state.ui.theme = v
+            }}
+          />
           <RsdTitle title='3D Support' className={styles.title2}/>
           <div className={styles.line}>
             <RsdSelectableButton label='VR Headset' value={snap.support.VR} onChange={v => {
-              historyManager.check(Operate.GLOBAL_SUPPORT_VR)
+              historyManager.check('global.support.VR')
               state.support.VR = v
             }}>
               <div className={rsbStyles.iconHolder} style={{
@@ -53,7 +69,7 @@ export default function Drawer() {
               </div>
             </RsdSelectableButton>
             <RsdSelectableButton label='AR Device' value={snap.support.AR} onChange={v => {
-              historyManager.check(Operate.GLOBAL_SUPPORT_AR)
+              historyManager.check('global.support.AR')
               state.support.AR = v
             }}>
               <div className={rsbStyles.iconHolder} style={{
@@ -76,7 +92,7 @@ export default function Drawer() {
           </div>
           <div className={styles.line}>
             <RsdSelectableButton label='MR Headset' value={snap.support.MR} onChange={v => {
-              historyManager.check(Operate.GLOBAL_SUPPORT_MR)
+              historyManager.check('global.support.MR')
               state.support.MR = v
             }}>
               <div className={rsbStyles.iconHolder} style={{
@@ -101,7 +117,7 @@ export default function Drawer() {
               </div>
             </RsdSelectableButton>
             <RsdSelectableButton label='HP Magic Box' value={snap.support.HP} onChange={v => {
-              historyManager.check(Operate.GLOBAL_SUPPORT_HP)
+              historyManager.check('global.support.HP')
               state.support.HP = v
             }}>
               <div className={rsbStyles.iconHolder} style={{
@@ -133,15 +149,15 @@ export default function Drawer() {
           {/*<div className={clsx(rss.divider, styles.divider2)}/>*/}
           <RsdTitle title='Playing Config' className={styles.title3}/>
           <RsdSwitch label='Enable Auto Play' value={snap.playing.auto} onChange={v => {
-            historyManager.check(Operate.GLOBAL_PLAYING_AUTO)
+            historyManager.check('global.playing.auto')
             state.playing.auto = v
           }}/>
           <RsdSwitch label='Enable Loop' value={snap.playing.loop} onChange={v => {
-            historyManager.check(Operate.GLOBAL_PLAYING_LOOP)
+            historyManager.check('global.playing.loop')
             state.playing.loop = v
           }}/>
           <RsdNumber label='Interval' value={snap.playing.interval} onChange={v => {
-            historyManager.check(Operate.GLOBAL_PLAYING_INTERVAL)
+            historyManager.check('global.playing.interval')
             state.playing.interval = v
           }}/>
         </div>

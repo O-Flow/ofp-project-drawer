@@ -10,7 +10,10 @@ import {
   SyncServiceApi,
   RvGlobalServiceApi,
   HistoryManagerApi,
-  DialogApi
+  DialogApi,
+  RvStepServiceApi,
+  TStepServiceApi,
+  UseTStep,
 } from "oflow-interface";
 import type { FunctionComponent } from "react";
 
@@ -28,6 +31,11 @@ export let Dialog: DialogApi
 export let syncService: SyncServiceApi
 export let historyManager: HistoryManagerApi
 export let rvGlobalService: RvGlobalServiceApi
+export let rvStepService: RvStepServiceApi
+
+export let tStepService: TStepServiceApi
+
+export let useTStep: UseTStep
 
 export let Anchor: FunctionComponent<AnchorProps>
 export let DrawerLoading: FunctionComponent<SpanProps>
@@ -81,6 +89,11 @@ export function loadApi() {
   syncService = api.services.sync.syncService
   historyManager = api.services.sync.historyManager
   rvGlobalService = api.services.sync.rvGlobalService
+  rvStepService = api.services.sync.rvStepService
+
+  tStepService = api.services.target.tStepService
+
+  useTStep = api.hooks.useTStep
 
   rss = api.styles.rss
   rsbStyles = api.styles.rsbStyles
