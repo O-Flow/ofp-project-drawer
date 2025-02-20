@@ -10,7 +10,6 @@ import {
   SyncServiceApi,
   RvGlobalServiceApi,
   HistoryManagerApi,
-  DialogApi,
   RvStepServiceApi,
   TStepServiceApi,
   UseTStep,
@@ -25,8 +24,6 @@ export let userService: UserServiceApi
 export let localFileService: LocalFileServiceApi
 export let meetingService: MeetingServiceApi
 export let modulePreloader: ModulePreloaderApi
-
-export let Dialog: DialogApi
 
 export let syncService: SyncServiceApi
 export let historyManager: HistoryManagerApi
@@ -83,8 +80,6 @@ export function loadApi() {
   pluginService = api.services.main.pluginService
   userService = api.services.main.userService
   modulePreloader = api.services.main.modulePreloader
-
-  Dialog = api.services.view.Dialog
 
   syncService = api.services.sync.syncService
   historyManager = api.services.sync.historyManager
